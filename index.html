@@ -1,13 +1,82 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arlight</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html data-theme="light" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/style.css" rel="stylesheet" />
+  <title>Arlight</title>
+</head>
+
+<body>
+
+  <div id="app" class="container">
+    <header class="grid grid-cols-3 justify-items-center items-center bg-sidebar rounded-b-2xl py-4 px-8 mb-16 ring ">
+      <a href="/" title="На главную">
+        <h1 class="text-primary">Arlight</h1>
+      </a>
+      <span id="tabs-counter"
+        class="flex items-center justify-center font-semibold text-primary border-destructive border w-8 h-8 rounded-full">0</span>
+
+      <button type="button" id="theme-changer"
+        class="cursor-pointer border py-1 px-2 rounded-2xl hover:border-accent-foreground">Switch Theme</button>
+    </header>
+    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-4 lg:gap-4 xl:gap-8">
+      <div class="flex flex-col p-4 bg-card rounded-xl ring gap-8">
+        <h3 class="text-xl font-medium">Title</h3>
+        <p class="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odio accusamus
+          error
+          veritatis quidem? Pariatur nostrum tempora quaerat atque cum ex eligendi ipsa esse necessitatibus. Veniam
+          quibusdam suscipit placeat quae!</p>
+        <button class="cursor-pointer border py-1 px-2 rounded-2xl hover:border-accent-foreground">Button</button>
+      </div>
+      <div class="flex flex-col p-4 bg-card rounded-xl ring gap-8">
+        <h3 class="text-xl font-medium">Title</h3>
+        <p class="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odio accusamus
+          error
+          veritatis quidem? Pariatur nostrum tempora quaerat atque cum ex eligendi ipsa esse necessitatibus. Veniam
+          quibusdam suscipit placeat quae!</p>
+        <button class="cursor-pointer border py-1 px-2 rounded-2xl hover:border-accent-foreground">Button</button>
+      </div>
+      <div class="flex flex-col p-4 bg-card rounded-xl ring gap-8">
+        <h3 class="text-xl font-medium">Title</h3>
+        <p class="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odio accusamus
+          error
+          veritatis quidem? Pariatur nostrum tempora quaerat atque cum ex eligendi ipsa esse necessitatibus. Veniam
+          quibusdam suscipit placeat quae!</p>
+        <button class="cursor-pointer border py-1 px-2 rounded-2xl hover:border-accent-foreground">Button</button>
+      </div>
+      <div class="flex flex-col p-4 bg-card rounded-xl ring gap-8">
+        <h3 class="text-xl font-medium">Title</h3>
+        <p class="line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odio accusamus
+          error
+          veritatis quidem? Pariatur nostrum tempora quaerat atque cum ex eligendi ipsa esse necessitatibus. Veniam
+          quibusdam suscipit placeat quae!</p>
+        <button class="cursor-pointer border py-1 px-2 rounded-2xl hover:border-accent-foreground">Button</button>
+      </div>
+      <div class="col-span-full lg:col-span-2 lg:col-start-2 p-4 bg-card rounded-xl ring">
+        <form id="form" action="#" class="flex flex-col mb-8">
+          <h2 class="font-medium text-2xl mb-6">Subscribe</h2>
+          <label class="flex flex-col mb-2 group">
+            <input name="email" autocomplete="email" type="text" placeholder="example@example.com"
+              class="bg-input ring rounded-xl px-2 py-1 block group-[.error]:ring-destructive" />
+            <span class="text-destructive transition-opacity opacity-0 group-[.error]:opacity-100 text-xs pt-2 leading-3">Incorrect
+              input</span>
+          </label>
+          <button type="submit"
+            class="cursor-pointer border py-1 px-2 rounded-2xl hover:border-accent-foreground">Subscribe</button>
+        </form>
+        <h2 class="underline mb-2">List of emails:</h2>
+        <ul id="list"></ul>
+      </div>
+
+    </main>
+  </div>
+
+  <script type="module" src="/src/theme.js"></script>
+  <script type="module" src="/src/shared-worker.js"></script>
+  <script type="module" src="/src/form.js"></script>
+</body>
+
 </html>
