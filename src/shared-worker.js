@@ -1,6 +1,8 @@
 import { getCurrentTheme, setCallback, setCurrentTheme } from "/src/theme.js";
 
-const worker = new SharedWorker(`/src/worker.js`);
+const worker = new SharedWorker(
+  new URL("./worker.js?worker&shared", import.meta.url),
+);
 const tabsCounter = document.querySelector("#tabs-counter");
 setCallback(() => worker.port.postMessage(getCurrentTheme()));
 

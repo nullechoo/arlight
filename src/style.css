@@ -124,7 +124,7 @@
   }
 }
 
-*:not('#error') {
+*:not(#error) {
   @apply transition-colors;
 }
 
